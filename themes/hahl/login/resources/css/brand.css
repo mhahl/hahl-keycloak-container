@@ -1,0 +1,30 @@
+
+.login-pf {
+   background: black; 
+}
+
+.login-pf body {
+    background-image: none;
+}
+
+div.kc-logo-text {
+    background-image: url("../img/index.svg");
+    background-size: 300px 100px;
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.card-pf {
+    border-color: #101010;
+}
+
+.pf-c-button.pf-m-primary {
+    background-color: black;
+}
+
+@media (max-width: 767px) {
+    .login-pf body {
+        background: black;
+    }
+}

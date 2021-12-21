@@ -1,0 +1,5 @@
+.navbar-pf .navbar-brand {
+    background-image: url("../img/index.svg");
+    background-size: 75px 25px;
+    width: 75px;
+}
