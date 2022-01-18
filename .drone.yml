@@ -2,7 +2,17 @@
 kind: pipeline
 name: build and push
 steps:
-- name: build container  
+
+- name: build-tags
+  image: node
+  when:
+    event:
+      - push
+      - pull_request
+  commands:
+    - echo -n "$(date +'%Y%m%d%H%M'), latest" > .tags
+
+- name: build-container  
   image: plugins/docker
   settings:
     username:
@@ -11,6 +21,7 @@ steps:
       from_secret: harbor_password
     repo: harbor.apps.infra.hahl.id.au/hahl.id.au/hahl-keycloak
     registry: harbor.apps.infra.hahl.id.au
-    tags:
-    - ${DRONE_COMMIT_BRANCH}
-    - latest
+  when:
+    branch:
+      - master
+      - main
