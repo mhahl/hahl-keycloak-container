@@ -1,9 +1,8 @@
 ---
 kind: pipeline
-name: default
-
+name: build and push
 steps:
-- name: docker  
+- name: build container  
   image: plugins/docker
   settings:
     username:
@@ -12,3 +11,6 @@ steps:
       from_secret: harbor_password
     repo: harbor.apps.infra.hahl.id.au/hahl.id.au/hahl-keycloak
     registry: harbor.apps.infra.hahl.id.au
+    tags:
+    - ${DRONE_COMMIT_BRANCH}
+    - latest
