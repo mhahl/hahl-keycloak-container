@@ -1,0 +1,14 @@
+---
+kind: pipeline
+name: default
+
+steps:
+- name: docker  
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: harbor_username
+    password:
+      from_secret: harbor_password
+    repo: harbor.apps.infra.hahl.id.au/hahl.id.au/hahl-keycloak
+    registry: harbor.apps.infra.hahl.id.au
