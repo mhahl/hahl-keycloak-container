@@ -1,3 +1,3 @@
-from bitnami/keycloak:16.1.0-debian-10-r0
+from docker.io/bitnami/keycloak:19.0.3-debian-11-r4
 
 COPY ./themes/hahl /opt/bitnami/keycloak/themes/hahl
